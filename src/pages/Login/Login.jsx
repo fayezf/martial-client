@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import login from '../../assets/banner/login.jpg';
+import { Helmet } from 'react-helmet-async';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
-    // const { signIn } = useContext(AuthContext);
+    const { signIn } = useContext(AuthContext);
     // const navigate = useNavigate();
     // const location = useLocation();
 
@@ -34,13 +36,13 @@ const Login = () => {
 
     return (
         <>
-            {/* <Helmet>
-                <title>Bistro Boss | Login</title>
-            </Helmet> */}
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col gap-8 md:flex-row-reverse">
+            <Helmet>
+                <title>Martial Arts | Login</title>
+            </Helmet>
+            <div className="hero min-h-screen my-16 bg-base-200">
+                <div className="hero-content md:flex gap-8 ">
                     <div className='w-1/2'>
-                        <img style={{height: '380px'}} className='rounded-lg' src={login} alt="" />
+                        <img style={{height: '400px'}} className='rounded-lg' src={login} alt="" />
                     </div>
                     <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
                         <h3 className='text-2xl text-center mt-4'>Please Login!!</h3>
