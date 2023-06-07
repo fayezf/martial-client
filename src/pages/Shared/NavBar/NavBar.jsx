@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
 
 const NavBar = () => {
     const navItems = <>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/instructor">Instructor</Link></li>
-        <li><Link to="/classes">Classes</Link></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/instructor">Instructor</NavLink></li>
+        <li><NavLink to="/classes">Classes</NavLink></li>
+        <li><Link to="/login">Login</Link></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -22,7 +23,7 @@ const NavBar = () => {
                 <div className='md:flex'>
                     <img style={{width: '80px'}} src={logo} alt="" />
                     <div>
-                        <p className='text-sm'><span className='font-bold text-lg'>Tiger</span><br /><span className='font-bold text-lg'>Claw</span><br />Martial Arts Club</p>
+                        <p className='text-sm'><span className='font-bold text-lg'>Tiger</span><br /><span className='font-bold text-lg'>Claw</span><br />Martial Arts School</p>
                     </div>
                 </div>
             </div>
@@ -32,7 +33,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <Link to="/blog"><button className='btn'>Blog</button></Link>
             </div>
         </div>
     );
