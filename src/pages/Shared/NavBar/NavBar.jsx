@@ -16,6 +16,7 @@ const NavBar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/instructor">Instructor</NavLink></li>
         <li><NavLink to="/classes">Classes</NavLink></li>
+        
         {
             user &&
             <div className="avatar online">
