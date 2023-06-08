@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const NavBar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
+
     const navItems = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/instructor">Instructor</NavLink></li>
         <li><NavLink to="/classes">Classes</NavLink></li>
-        <li><Link to="/login">Login</Link></li>
+
+        {
+            user ? <>
+                <button onClick={handleLogOut} className='btn btn-ghost'>LogOut</button>
+            </> : <>
+                <li><Link to="/login">Login</Link></li>
+            </>
+        }
     </>
     return (
         <div className="navbar bg-base-100">
@@ -21,7 +37,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className='md:flex'>
-                    <img style={{width: '80px'}} src={logo} alt="" />
+                    <img style={{ width: '80px' }} src={logo} alt="" />
                     <div>
                         <p className='text-sm'><span className='font-bold text-lg'>Tiger</span><br /><span className='font-bold text-lg'>Claw</span><br />Martial Arts School</p>
                     </div>

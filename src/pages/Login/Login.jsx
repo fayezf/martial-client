@@ -3,35 +3,35 @@ import { Link } from 'react-router-dom';
 import login from '../../assets/banner/login.jpg';
 import { Helmet } from 'react-helmet-async';
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     // const navigate = useNavigate();
     // const location = useLocation();
 
-    const from = location.state?.from?.pathname || "/";
+    // const from = location.state?.from?.pathname || "/";
 
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
-        // signIn(email, password)
-        //     .then(result => {
-        //         const user = result.user;
-        //         console.log(user);
-        //         Swal.fire({
-        //             title: 'User login successful',
-        //             showClass: {
-        //                 popup: 'animate__animated animate__fadeInDown'
-        //             },
-        //             hideClass: {
-        //                 popup: 'animate__animated animate__fadeOutUp'
-        //             }
-        //         });
-        //         navigate(from, { replace: true });
-        //     });
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire({
+                    title: 'User login successful',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+                // navigate(from, { replace: true });
+            });
     }
 
     return (
