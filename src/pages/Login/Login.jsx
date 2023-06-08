@@ -4,6 +4,7 @@ import login from '../../assets/banner/login.jpg';
 import { Helmet } from 'react-helmet-async';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -40,9 +41,9 @@ const Login = () => {
                 <title>Martial Arts | Login</title>
             </Helmet>
             <div className="hero min-h-screen my-16 bg-base-200">
-                <div className="hero-content md:flex gap-8 ">
+                <div className="hero-content md:flex gap-12 ">
                     <div className='w-1/2'>
-                        <img style={{height: '400px'}} className='rounded-lg' src={login} alt="" />
+                        <img style={{height: '500px'}} className='rounded-lg' src={login} alt="" />
                     </div>
                     <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
                         <h3 className='text-2xl text-center mt-4'>Please Login!!</h3>
@@ -67,6 +68,7 @@ const Login = () => {
                             </div>
                         </form>
                         <p className='text-center'><small>New Here? <Link to="/signup">Create an account</Link></small></p>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import signUp from '../../assets/banner/signUp.jpg';
 import { AuthContext } from '../../providers/AuthProvider';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 
 const SignUp = () => {
@@ -24,10 +25,10 @@ const SignUp = () => {
             <Helmet>
                 <title>Martial Arts | Sign Up</title>
             </Helmet>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content md:flex gap-8">
+            <div className="hero min-h-screen my-16 bg-base-200">
+                <div className="hero-content md:flex gap-12">
                     <div className='w-1/2'>
-                        <img style={{ height: '500px' }} className='rounded-lg' src={signUp} alt="" />
+                        <img style={{ height: '700px' }} className='rounded-lg' src={signUp} alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -75,6 +76,7 @@ const SignUp = () => {
                             </div>
                         </form>
                         <p className='text-center'><small>Already have an account <Link to="/login">Login</Link></small></p>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
