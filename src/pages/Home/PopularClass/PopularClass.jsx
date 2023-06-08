@@ -16,7 +16,7 @@ const PopularClass = () => {
             <SectionTitle
                 heading="Popular Martial Classes"
             ></SectionTitle>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-2 ml-36'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-2 ml-8'>
                 {
                     classes?.slice(4).map(arts => <PopularCard
                     key={arts._id}

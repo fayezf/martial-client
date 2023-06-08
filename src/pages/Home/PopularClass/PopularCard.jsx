@@ -8,12 +8,14 @@ const PopularCard = ({ arts }) => {
                 <img src={image} alt="" className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">{name}</h2>
+                <h2 className="card-title">{name}
+                    <div className="badge badge-secondary">Popular</div>
+                </h2>
                 <h2 className="card-title">Instructor: {instructor}</h2>
                 <p>Available seats: {availableSeats}</p>
                 <p>Price: <span className='text-yellow-600'>{price}</span></p>
                 <div className="card-actions">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button className="btn btn-wide btn-accent font-bold text-white">Select</button>
                 </div>
             </div>
         </div>
