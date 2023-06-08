@@ -16,6 +16,14 @@ const NavBar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/instructor">Instructor</NavLink></li>
         <li><NavLink to="/classes">Classes</NavLink></li>
+        {
+            user &&
+            <div className="avatar online">
+                <div className="w-18 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <img title={user.displayName} style={{ height: '3rem' }} src={user.photoURL} />
+                </div>
+            </div>
+        }
 
         {
             user ? <>
