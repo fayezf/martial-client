@@ -13,9 +13,9 @@ const NavBar = () => {
     }
 
     const navItems = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/instructor">Instructor</NavLink></li>
-        <li><NavLink to="/classes">Classes</NavLink></li>
+        <li><NavLink className="font-bold" to="/">Home</NavLink></li>
+        <li><NavLink className="font-bold" to="/instructor">Instructor</NavLink></li>
+        <li><NavLink className="font-bold" to="/classes">Classes</NavLink></li>
         
         {
             user &&
@@ -28,14 +28,14 @@ const NavBar = () => {
 
         {
             user ? <>
-                <button onClick={handleLogOut} className='btn btn-ghost'>LogOut</button>
+                <button onClick={handleLogOut} className='btn btn-ghost'>Log Out</button>
             </> : <>
-                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/login" className='font-bold'>Login</Link></li>
             </>
         }
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-300">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

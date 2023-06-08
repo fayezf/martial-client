@@ -1,0 +1,92 @@
+[
+    {
+        "_id": 1,
+        "name": "Karate",
+        "instructor": "John Smith",
+        "martialType": "Karate",
+        "image": "https://i.ibb.co/G9ydPq3/teacher2.jpg",
+        "availableSeats": 15,
+        "price": 25
+    },
+    {
+        "_id": 2,
+        "name": "Muay Thai",
+        "instructor": "Sarah Johnson",
+        "martialType": "Muay Thai",
+        "image": "https://i.ibb.co/kh1xtpR/teacher1.jpg",
+        "availableSeats": 12,
+        "price": 30
+    },
+    {
+        "_id": 3,
+        "name": "Brazilian Jiu-Jitsu",
+        "instructor": "David Rodriguez",
+        "martialType": "Brazilian Jiu-Jitsu",
+        "image": "https://i.ibb.co/47v87XH/teacher3.jpg",
+        "availableSeats": 10,
+        "price": 35
+    },
+    {
+        "_id": 4,
+        "name": "Taekwondo",
+        "instructor": "Emily Lee",
+        "martialType": "Taekwondo",
+        "image": "https://i.ibb.co/4RhmHBr/teacher4.jpg",
+        "availableSeats": 8,
+        "price": 20
+    },
+    {
+        "_id": 5,
+        "name": "Boxing",
+        "instructor": "Michael Thompson",
+        "martialType": "Boxing",
+        "image": "https://i.ibb.co/GTt6bv9/teacher10.jpg",
+        "availableSeats": 10,
+        "price": 30
+    },
+    {
+        "_id": 6,
+        "name": "Capoeira",
+        "instructor": "Maria Santos",
+        "martialType": "Capoeira",
+        "image": "https://i.ibb.co/QJP8d8N/teacher7.jpg",
+        "availableSeats": 15,
+        "price": 25
+    },
+    {
+        "_id": 7,
+        "name": "Kung Fu",
+        "instructor": "Robert Chen",
+        "martialType": "Kung Fu",
+        "image": "https://i.ibb.co/K923hgZ/teacher5.jpg",
+        "availableSeats": 10,
+        "price": 30
+    },
+    {
+        "_id": 8,
+        "name": "Krav Maga",
+        "instructor": "Rachel Cohen",
+        "martialType": "Krav Maga",
+        "image": "https://i.ibb.co/xz8Cm8c/teacher6.jpg",
+        "availableSeats": 12,
+        "price": 35
+    },
+    {
+        "_id": 9,
+        "name": "Aikido",
+        "instructor": "Kenji Nakamura",
+        "martialType": "Aikido",
+        "image": "https://i.ibb.co/9NfTrsF/teacher8.jpg",
+        "availableSeats": 8,
+        "price": 25
+    },
+    {
+        "_id": 10,
+        "name": "Kickboxing",
+        "instructor": "Laura Davis",
+        "martialType": "Kickboxing",
+        "image": "https://i.ibb.co/K2qxDh0/teacher9.jpg",
+        "availableSeats": 10,
+        "price": 30
+    }
+]
