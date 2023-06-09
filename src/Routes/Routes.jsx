@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Instructors from "../pages/InstructorPage/InstructorAll/Instructors";
+import Classes from "../pages/ClassesPage/Classes/Classes";
 
 
 
@@ -30,6 +31,10 @@ import Instructors from "../pages/InstructorPage/InstructorAll/Instructors";
         {
           path: 'instructors',
           element: <Instructors></Instructors>
+        },
+        {
+          path:'classes',
+          element: <Classes></Classes>
         }
       ]
     },

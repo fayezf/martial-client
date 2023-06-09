@@ -1,17 +1,17 @@
 import React, { useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Slide } from "react-awesome-reveal";
+import { Zoom } from "react-awesome-reveal";
 import { AuthContext } from '../../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 
-const PopularCard = ({ arts }) => {
-    const { _id, name, instructor, image, availableSeats, price } = arts;
+const ClassesAll = ({ martial }) => {
+    const { _id, name, instructor, image, availableSeats, price } = martial;
     const {user} = useContext(AuthContext);
     const navigate = useNavigate();
-    const location = useLocation()
+    const location = useLocation();
 
-    const handleSelect = arts => {
-        console.log(arts);
+    const handleSelect = martial => {
+        console.log(martial);
         if(user && user.email){
             const bookingSeats = {bookingsId: _id, name, instructor, image, availableSeats, price, email: user.email}
             fetch('http://localhost:5000/seats', {
@@ -27,7 +27,7 @@ const PopularCard = ({ arts }) => {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Your work has been saved',
+                        title: 'Booking added on the seats',
                         showConfirmButton: false,
                         timer: 1500
                       })
@@ -51,25 +51,23 @@ const PopularCard = ({ arts }) => {
     }
 
     return (
-        <Slide>
+        <Zoom>
             <div className="card w-96 my-2 mb-8 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img src={image} alt="" className="rounded-xl" />
                 </figure>
                 <div className="card-body items-center text-center">
-                    <h2 className="card-title">{name}
-                        <div className="badge badge-secondary">Popular</div>
-                    </h2>
+                    <h2 className="card-title">{name}</h2>
                     <h2 className="card-title">Instructor: {instructor}</h2>
                     <p>Available seats: {availableSeats}</p>
                     <p>Price: <span className='text-yellow-600'>{price}</span></p>
                     <div className="card-actions">
-                        <button onClick={() => handleSelect(arts)} className="btn btn-wide btn-accent font-bold text-white">Select</button>
+                        <button onClick={() => handleSelect(martial)} className="btn btn-wide btn-accent font-bold text-white">Select</button>
                     </div>
                 </div>
             </div>
-        </Slide>
+        </Zoom>
     );
 };
 
-export default PopularCard;
+export default ClassesAll;

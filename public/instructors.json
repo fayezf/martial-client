@@ -1,62 +1,58 @@
 [
     {
-        "_id": "1",
         "image": "https://i.ibb.co/G9ydPq3/teacher2.jpg",
         "instructor": "John Smith",
         "email": "john.smith@example.com"
     },
     {
-        "_id": "2",
         "image": "https://i.ibb.co/kh1xtpR/teacher1.jpg",
         "instructor": "Sarah Johnson",
         "email": "sarah.johnson@example.com"
     },
     {
-        "_id": "3",
         "image": "https://i.ibb.co/47v87XH/teacher3.jpg",
         "instructor": "David Rodriguez",
         "email": "david.rodriguez@example.com"
     },
     {
-        "_id": "4",
         "image": "https://i.ibb.co/4RhmHBr/teacher4.jpg",
         "instructor": "Emily Lee",
         "email": "emily.lee@example.com"
     },
     {
-        "_id": "5",
         "image": "https://i.ibb.co/GTt6bv9/teacher10.jpg",
         "instructor": "Michael Thompson",
+        "category": "popular",
         "email": "michael.thompson@example.com"
     },
     {
-        "_id": "6",
         "image": "https://i.ibb.co/QJP8d8N/teacher7.jpg",
         "instructor": "Maria Santos",
+        "category": "popular",
         "email": "maria.santos@example.com"
     },
     {
-        "_id": "7",
         "image": "https://i.ibb.co/K923hgZ/teacher5.jpg",
         "instructor": "Robert Chen",
+        "category": "popular",
         "email": "robert.chen@example.com"
     },
     {
-        "_id": "8",
         "image": "https://i.ibb.co/xz8Cm8c/teacher6.jpg",
         "instructor": "Rachel Cohen",
+        "category": "popular",
         "email": "rachel.cohen@example.com"
     },
     {
-        "_id": "9",
         "image": "https://i.ibb.co/9NfTrsF/teacher8.jpg",
         "instructor": "Kenji Nakamura",
+        "category": "popular",
         "email": "kenji.nakamura@example.com"
     },
     {
-        "_id": "10",
         "image": "https://i.ibb.co/K2qxDh0/teacher9.jpg",
         "instructor": "Laura Davis",
+        "category": "popular",
         "email": "laura.davis@example.com"
     }
 ]

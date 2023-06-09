@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
+import { FaDollyFlatbed } from 'react-icons/fa';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const NavBar = () => {
@@ -16,7 +17,15 @@ const NavBar = () => {
         <li><NavLink className="font-bold" to="/">Home</NavLink></li>
         <li><NavLink className="font-bold" to="/instructors">Instructors</NavLink></li>
         <li><NavLink className="font-bold" to="/classes">Classes</NavLink></li>
-        
+        <li>
+            <Link to="/">
+                <button className='btn gap-2'>
+                    <FaDollyFlatbed></FaDollyFlatbed>
+                    <div className="badge badge-secondary">+0</div>
+                </button>
+            </Link>
+        </li>
+
         {
             user &&
             <div className="avatar online">
