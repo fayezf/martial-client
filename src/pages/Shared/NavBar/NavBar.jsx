@@ -14,7 +14,7 @@ const NavBar = () => {
 
     const navItems = <>
         <li><NavLink className="font-bold" to="/">Home</NavLink></li>
-        <li><NavLink className="font-bold" to="/instructor">Instructor</NavLink></li>
+        <li><NavLink className="font-bold" to="/instructors">Instructors</NavLink></li>
         <li><NavLink className="font-bold" to="/classes">Classes</NavLink></li>
         
         {

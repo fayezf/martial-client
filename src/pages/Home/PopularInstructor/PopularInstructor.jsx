@@ -9,7 +9,7 @@ const PopularInstructor = () => {
     return (
         <div>
             <SectionTitle
-            heading="Our Popular Instructors"
+            heading="Popular Martial Instructors"
             ></SectionTitle>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-2 ml-8'>
                 {
