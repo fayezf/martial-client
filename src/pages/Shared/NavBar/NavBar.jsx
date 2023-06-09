@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
-import { FaDollyFlatbed } from 'react-icons/fa';
 import { AuthContext } from '../../../providers/AuthProvider';
+import useSeats from '../../../hooks/useSeats';
 
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -14,16 +14,11 @@ const NavBar = () => {
     }
 
     const navItems = <>
-        <li><NavLink className="font-bold" to="/">Home</NavLink></li>
-        <li><NavLink className="font-bold" to="/instructors">Instructors</NavLink></li>
-        <li><NavLink className="font-bold" to="/classes">Classes</NavLink></li>
+        <li><NavLink to="/" className="font-bold">Home</NavLink></li>
+        <li><NavLink to="/instructors" className="font-bold">Instructors</NavLink></li>
+        <li><NavLink to="/classes" className="font-bold">Classes</NavLink></li>
         <li>
-            <Link to="/">
-                <button className='btn gap-2'>
-                    <FaDollyFlatbed></FaDollyFlatbed>
-                    <div className="badge badge-secondary">+0</div>
-                </button>
-            </Link>
+            <NavLink to="/dashboard" className="font-bold">Dashboard</NavLink>
         </li>
 
         {

@@ -3,10 +3,12 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { Slide } from "react-awesome-reveal";
 import { AuthContext } from '../../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import useSeats from '../../../hooks/useSeats';
 
 const PopularCard = ({ arts }) => {
     const { _id, name, instructor, image, availableSeats, price } = arts;
     const {user} = useContext(AuthContext);
+    const [, refetch] = useSeats();
     const navigate = useNavigate();
     const location = useLocation()
 
@@ -24,6 +26,7 @@ const PopularCard = ({ arts }) => {
             .then(res => res.json())
             .then(data => {
                 if(data.insertedId){
+                    refetch();
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
