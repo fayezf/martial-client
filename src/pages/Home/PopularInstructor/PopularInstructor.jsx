@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import InstructorCard from './InstructorCard';
+import useInstructor from '../../../hooks/useInstructor';
 
 const PopularInstructor = () => {
-    const [instructors, setInstructor] = useState([]);
-
-    useEffect(() => {
-        fetch('instructors.json')
-        .then(res => res.json())
-        .then(data => setInstructor(data))
-    }, [])
+    const [instructors] = useInstructor();
 
     return (
         <div>
