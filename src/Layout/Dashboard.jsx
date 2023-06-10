@@ -1,10 +1,13 @@
 import React from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
-import { FaChalkboard, FaChalkboardTeacher, FaCreditCard, FaHome } from 'react-icons/fa';
+import { FaChalkboard, FaChalkboardTeacher, FaUsers, FaCreditCard, FaHome } from 'react-icons/fa';
 import useSeats from '../hooks/useSeats';
 
 const Dashboard = () => {
     const [seat] = useSeats();
+    // TODO:load data from the server to have dynamic isAdmin based on data
+    const isAdmin = true;
+
     return (
         <div className="drawer align-top lg:drawer-open my-4">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -15,14 +18,27 @@ const Dashboard = () => {
             </div>
             <div className="drawer-side bg-yellow-700">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 h-full text-base-content">
+                <ul className="menu p-4 w-80">
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
-                    <li><NavLink to="/dashboard/myclasses"><FaChalkboard></FaChalkboard> My Selected Class
-                        <span className='badge badge-secondary'>+{seat?.length || 0}</span>
-                    </NavLink>
-                    </li>
-                    <li><NavLink to="/dashboard/enroll"><FaChalkboardTeacher></FaChalkboardTeacher> My Enrolled Class</NavLink></li>
-                    <li><NavLink to="/dashboard/history"><FaCreditCard></FaCreditCard> Payment History</NavLink></li>
+                    <div className="divider"></div>
+                    {
+                        isAdmin ? <>
+                            <li><NavLink to="/dashboard/allusers"><FaUsers/> Manage Users
+                            </NavLink>
+                            </li>
+                            <li><NavLink to="/dashboard/allclasses"><FaChalkboardTeacher></FaChalkboardTeacher> Manage Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/myclass"><FaChalkboard/> My Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/addclass"><FaChalkboardTeacher/> Add a Class</NavLink></li>
+                        </> : <>
+                            <li><NavLink to="/dashboard/selectedclasses"><FaChalkboard></FaChalkboard> My Selected Classes
+                                <span className='badge badge-secondary'>+{seat?.length || 0}</span>
+                            </NavLink>
+                            </li>
+                            <li><NavLink to="/dashboard/enroll"><FaChalkboardTeacher></FaChalkboardTeacher> My Enrolled Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/history"><FaCreditCard></FaCreditCard> Payment History</NavLink></li>
+                        </>
+                    }
+
                 </ul>
 
             </div>
