@@ -3,10 +3,40 @@ import { Helmet } from 'react-helmet-async';
 import useSeats from '../../../hooks/useSeats';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import { FaTrashAlt, FaMoneyBillAlt } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const MyClasses = () => {
-    const [seat] = useSeats();
-    const total = seat.reduce((sum, item) => item.price + sum, 0)
+    const [seat, refetch] = useSeats();
+    const total = seat.reduce((sum, item) => item.price + sum, 0);
+
+    const handleDelete = item => {
+        Swal.fire({
+            title: 'Are you sure?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/seats/${item._id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
+    }
+
     return (
         <div className='w-full'>
             <Helmet>
@@ -16,7 +46,6 @@ const MyClasses = () => {
             <div className='uppercase font-semibold h-[60px] flex justify-evenly items-center'>
                 <h3 className='text-3xl'>Total Class: {seat.length}</h3>
                 <h3 className='text-3xl'>Total Payment: {total}</h3>
-                <button className="btn btn-warning btn-sm">PAY</button>
             </div>
             <div className="overflow-x-auto">
                 <table className="table">
@@ -28,6 +57,7 @@ const MyClasses = () => {
                             <th>Name</th>
                             <th>Available seats</th>
                             <th>Price</th>
+                            <th>Payment</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -52,12 +82,10 @@ const MyClasses = () => {
                                 <td>{item.availableSeats}</td>
                                 <td>{item.price}</td>
                                 <td>
-                                    <div className='flex gap-2'>
-                                        <button className="btn btn-ghost btn-sm bg-primary text-white"><FaMoneyBillAlt></FaMoneyBillAlt></button>
-                                        <div>
-                                            <button className="btn btn-ghost btn-sm bg-red-600 text-white"><FaTrashAlt></FaTrashAlt></button>
-                                        </div>
-                                    </div>
+                                    <button className="btn btn-ghost bg-primary text-white">PAY</button>
+                                </td>
+                                <td>
+                                    <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600 text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
                             </tr>)
                         }
