@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import useSeats from '../../../hooks/useSeats';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-import { FaTrashAlt, FaMoneyBillAlt } from 'react-icons/fa';
+import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const MyClasses = () => {

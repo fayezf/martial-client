@@ -8,7 +8,7 @@ const useSeats = () => {
     const { refetch,  data: seat = [] } = useQuery({
         queryKey: ['seats', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/seats?email=${user.email}`)
+            const res = await fetch(`http://localhost:5000/seats?email=${user?.email}`)
             return res.json()
         },
       })
