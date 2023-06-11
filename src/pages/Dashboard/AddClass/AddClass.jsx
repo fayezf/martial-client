@@ -3,6 +3,7 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import { useForm } from 'react-hook-form';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const img_hosting_token =import.meta.env.VITE_Image_Upload_Token;
 const AddClass = () => {
@@ -44,6 +45,9 @@ const AddClass = () => {
 
     return (
         <div className='w-full px-10'>
+            <Helmet>
+                <title>Martial Arts | Add Classes</title>
+            </Helmet>
             <SectionTitle heading="Add A Class"></SectionTitle>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="md:flex gap-x-3 mb-8">
