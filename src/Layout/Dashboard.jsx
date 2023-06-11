@@ -2,11 +2,13 @@ import React from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import { FaChalkboard, FaChalkboardTeacher, FaUsers, FaCreditCard, FaHome } from 'react-icons/fa';
 import useSeats from '../hooks/useSeats';
+import useAdmin from '../hooks/useAdmin';
 
 const Dashboard = () => {
     const [seat] = useSeats();
     // TODO:load data from the server to have dynamic isAdmin based on data
-    const isAdmin = true;
+    // const isAdmin = true;
+    const [isAdmin] = useAdmin();
 
     return (
         <div className="drawer align-top lg:drawer-open my-4">
@@ -28,7 +30,7 @@ const Dashboard = () => {
                             </li>
                             <li><NavLink to="/dashboard/allclasses"><FaChalkboardTeacher></FaChalkboardTeacher> Manage Classes</NavLink></li>
                             <li><NavLink to="/dashboard/myclass"><FaChalkboard/> My Classes</NavLink></li>
-                            <li><NavLink to="/dashboard/addclass"><FaChalkboardTeacher/> Add a Class</NavLink></li>
+                            <li><NavLink to="/dashboard/addclass"><FaChalkboardTeacher/> Add A Class</NavLink></li>
                         </> : <>
                             <li><NavLink to="/dashboard/selectedclasses"><FaChalkboard></FaChalkboard> My Selected Classes
                                 <span className='badge badge-secondary'>+{seat?.length || 0}</span>
