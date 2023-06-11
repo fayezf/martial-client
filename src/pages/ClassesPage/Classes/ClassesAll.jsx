@@ -13,7 +13,7 @@ const ClassesAll = ({ martial }) => {
     const location = useLocation();
 
     const handleSelect = martial => {
-        console.log(martial);
+        // console.log(martial);
         if(user && user.email){
             const bookingSeats = {bookingsId: _id, name, instructor, image, availableSeats, price, email: user.email}
             fetch('http://localhost:5000/seats', {
@@ -63,7 +63,7 @@ const ClassesAll = ({ martial }) => {
                     <h2 className="card-title">{name}</h2>
                     <h2 className="card-title">Instructor: {instructor}</h2>
                     <p>Available seats: {availableSeats}</p>
-                    <p>Price: <span className='text-yellow-600'>{price}</span></p>
+                    <p>Price: <span className='text-yellow-600'>${price}</span></p>
                     <div className="card-actions">
                         <button onClick={() => handleSelect(martial)} className="btn btn-wide btn-accent font-bold text-white">Select</button>
                     </div>

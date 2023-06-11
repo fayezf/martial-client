@@ -4,6 +4,7 @@ import useSeats from '../../../hooks/useSeats';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyClasses = () => {
     const [seat, refetch] = useSeats();
@@ -45,7 +46,7 @@ const MyClasses = () => {
             <SectionTitle heading="My Selected Class"></SectionTitle>
             <div className='uppercase font-semibold h-[60px] flex justify-evenly items-center'>
                 <h3 className='text-3xl'>Total Class: {seat.length}</h3>
-                <h3 className='text-3xl'>Total Payment: {total}</h3>
+                <h3 className='text-3xl'>Total Payment: ${total}</h3>
             </div>
             <div className="overflow-x-auto">
                 <table className="table">
@@ -80,9 +81,11 @@ const MyClasses = () => {
                                     {item.name}
                                 </td>
                                 <td>{item.availableSeats}</td>
-                                <td>{item.price}</td>
+                                <td>${item.price}</td>
                                 <td>
-                                    <button className="btn btn-ghost bg-primary text-white">PAY</button>
+                                    <Link to="/dashboard/payment">
+                                        <button className="btn btn-ghost bg-primary text-white">PAY</button>
+                                    </Link>
                                 </td>
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600 text-white"><FaTrashAlt></FaTrashAlt></button>

@@ -13,7 +13,7 @@ const Classes = () => {
                 <title>Martial Arts | Classes</title>
             </Helmet>
             <SectionTitle heading="Our All Classes"></SectionTitle>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-2 ml-8'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-12 '>
                 {
                     classes?.map(martial => <ClassesAll
                     key={martial._id}

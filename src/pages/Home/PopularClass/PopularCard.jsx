@@ -65,7 +65,7 @@ const PopularCard = ({ arts }) => {
                     </h2>
                     <h2 className="card-title">Instructor: {instructor}</h2>
                     <p>Available seats: {availableSeats}</p>
-                    <p>Price: <span className='text-yellow-600'>{price}</span></p>
+                    <p>Price: <span className='text-yellow-600'>${price}</span></p>
                     <div className="card-actions">
                         <button onClick={() => handleSelect(arts)} className="btn btn-wide btn-accent font-bold text-white">Select</button>
                     </div>

@@ -46,7 +46,7 @@ const useAxiosSecure = () => {
             axiosSecure.interceptors.request.eject(requestInterceptor);
             axiosSecure.interceptors.response.eject(responseInterceptor);
         };
-    }, [logOut, navigate, axiosSecure]);
+    }, [logOut, navigate]);
 
     return [axiosSecure];
 };

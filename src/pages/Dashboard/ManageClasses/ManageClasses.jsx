@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import useClass from '../../../hooks/useClass';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
@@ -35,6 +35,22 @@ const ManageClasses = () => {
                     })
             }
         })
+    }
+
+    const handleUpdate = item => {
+        axiosSecure.patch(`/classes/${item._id}`)
+            .then(res => {
+                if (res.data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${item.name} is an Updated Now!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
     }
 
     return (
@@ -79,9 +95,12 @@ const ManageClasses = () => {
                                     {item.instructor}
                                 </td>
                                 <td>{item.availableSeats}</td>
-                                <td>{item.price}</td>
+                                <td>${item.price}</td>
                                 <td>
-                                    <button className="btn btn-ghost btn-xs">Update</button>
+                                    {item === 'updated' ? 'updated' :
+                                        <button onClick={() => handleUpdate(item)} className="btn btn-ghost bg-primary text-white"><FaEdit /></button>
+                                    }
+
                                 </td>
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600 text-white"><FaTrashAlt></FaTrashAlt></button>

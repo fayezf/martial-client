@@ -12,7 +12,7 @@ const Instructors = () => {
                 <title>Martial Arts | Instructor</title>
             </Helmet>
             <SectionTitle heading="Our All Instructor"></SectionTitle>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-2 ml-8'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-12'>
                 {
                     instructors?.map(teach => <InstructorsAll
                         key={teach._id}
