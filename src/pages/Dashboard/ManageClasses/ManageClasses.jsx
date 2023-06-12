@@ -53,19 +53,6 @@ const ManageClasses = () => {
                     })
                 }
             })
-        // axiosSecure.patch(`/classes/${item._id}`)
-        //     .then(res => {
-        //         if (res.data.modifiedCount) {
-        //             refetch();
-        //             Swal.fire({
-        //                 position: 'top-end',
-        //                 icon: 'success',
-        //                 title: `${item.name} is an Updated Now!`,
-        //                 showConfirmButton: false,
-        //                 timer: 1500
-        //             })
-        //         }
-        //     })
     }
 
     return (

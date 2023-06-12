@@ -10,7 +10,8 @@ const Dashboard = () => {
 
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructors();
-
+    console.log(isAdmin)
+console.log(isInstructor)
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -24,29 +25,24 @@ const Dashboard = () => {
                 <ul className="menu p-4 w-80">
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
                     <div className="divider"></div>
+
                     {
-                        (!isAdmin && !isInstructor) && <>
+                        isAdmin ? (<div>
+                            <li><NavLink to="/dashboard/allusers"><FaUsers /> Manage Users
+                            </NavLink>
+                            </li>
+                            <li><NavLink to="/dashboard/allclasses"><FaChalkboardTeacher></FaChalkboardTeacher> Manage Classes</NavLink></li>
+                        </div>) : isInstructor ? (<div>
+                            <li><NavLink to="/dashboard/addclass"><FaChalkboardTeacher /> Add A Class</NavLink></li>
+                            <li><NavLink to="/dashboard/myclass"><FaChalkboard /> My Classes</NavLink></li>
+                        </div>) : <div>
                             <li><NavLink to="/dashboard/selectedclasses"><FaChalkboard></FaChalkboard> My Selected Classes
                                 <span className='badge badge-secondary'>+{seat?.length || 0}</span>
                             </NavLink>
                             </li>
                             <li><NavLink to="/dashboard/enroll"><FaChalkboardTeacher></FaChalkboardTeacher> My Enrolled Classes</NavLink></li>
                             <li><NavLink to="/dashboard/history"><FaCreditCard></FaCreditCard> Payment History</NavLink></li>
-                        </>
-                    }
-                    {
-                        isAdmin && <>
-                            <li><NavLink to="/dashboard/allusers"><FaUsers /> Manage Users
-                            </NavLink>
-                            </li>
-                            <li><NavLink to="/dashboard/allclasses"><FaChalkboardTeacher></FaChalkboardTeacher> Manage Classes</NavLink></li>
-                        </>
-                    }
-                    {
-                        isInstructor && <>
-                            <li><NavLink to="/dashboard/addclass"><FaChalkboardTeacher /> Add A Class</NavLink></li>
-                            <li><NavLink to="/dashboard/myclass"><FaChalkboard /> My Classes</NavLink></li>
-                        </>
+                        </div>
                     }
 
                 </ul>
