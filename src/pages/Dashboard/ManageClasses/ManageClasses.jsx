@@ -37,9 +37,12 @@ const ManageClasses = () => {
     }
 
     const handleUpdate = item => {
-        axiosSecure.patch(`/classes/${item._id}`)
-            .then(res => {
-                if (res.data.modifiedCount) {
+        fetch(`https://assignment-12-server-flame-nu.vercel.app/classes/${item._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
                     refetch();
                     Swal.fire({
                         position: 'top-end',
@@ -50,6 +53,19 @@ const ManageClasses = () => {
                     })
                 }
             })
+        // axiosSecure.patch(`/classes/${item._id}`)
+        //     .then(res => {
+        //         if (res.data.modifiedCount) {
+        //             refetch();
+        //             Swal.fire({
+        //                 position: 'top-end',
+        //                 icon: 'success',
+        //                 title: `${item.name} is an Updated Now!`,
+        //                 showConfirmButton: false,
+        //                 timer: 1500
+        //             })
+        //         }
+        //     })
     }
 
     return (

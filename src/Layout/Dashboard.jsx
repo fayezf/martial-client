@@ -3,11 +3,13 @@ import { Outlet, NavLink } from 'react-router-dom';
 import { FaChalkboard, FaChalkboardTeacher, FaUsers, FaCreditCard, FaHome } from 'react-icons/fa';
 import useSeats from '../hooks/useSeats';
 import useAdmin from '../hooks/useAdmin';
+import useInstructors from '../hooks/useInstructors';
 
 const Dashboard = () => {
     const [seat] = useSeats();
-    
+
     const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructors();
 
     return (
         <div className="drawer lg:drawer-open">
@@ -23,20 +25,27 @@ const Dashboard = () => {
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
                     <div className="divider"></div>
                     {
-                        isAdmin ? <>
-                            <li><NavLink to="/dashboard/allusers"><FaUsers/> Manage Users
-                            </NavLink>
-                            </li>
-                            <li><NavLink to="/dashboard/allclasses"><FaChalkboardTeacher></FaChalkboardTeacher> Manage Classes</NavLink></li>
-                            <li><NavLink to="/dashboard/myclass"><FaChalkboard/> My Classes</NavLink></li>
-                            <li><NavLink to="/dashboard/addclass"><FaChalkboardTeacher/> Add A Class</NavLink></li>
-                        </> : <>
+                        (!isAdmin && !isInstructor) && <>
                             <li><NavLink to="/dashboard/selectedclasses"><FaChalkboard></FaChalkboard> My Selected Classes
                                 <span className='badge badge-secondary'>+{seat?.length || 0}</span>
                             </NavLink>
                             </li>
                             <li><NavLink to="/dashboard/enroll"><FaChalkboardTeacher></FaChalkboardTeacher> My Enrolled Classes</NavLink></li>
                             <li><NavLink to="/dashboard/history"><FaCreditCard></FaCreditCard> Payment History</NavLink></li>
+                        </>
+                    }
+                    {
+                        isAdmin && <>
+                            <li><NavLink to="/dashboard/allusers"><FaUsers /> Manage Users
+                            </NavLink>
+                            </li>
+                            <li><NavLink to="/dashboard/allclasses"><FaChalkboardTeacher></FaChalkboardTeacher> Manage Classes</NavLink></li>
+                        </>
+                    }
+                    {
+                        isInstructor && <>
+                            <li><NavLink to="/dashboard/addclass"><FaChalkboardTeacher /> Add A Class</NavLink></li>
+                            <li><NavLink to="/dashboard/myclass"><FaChalkboard /> My Classes</NavLink></li>
                         </>
                     }
 

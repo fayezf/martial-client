@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { FaTrashAlt, FaUserShield } from 'react-icons/fa';
+import { FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
@@ -13,7 +13,7 @@ const AllUsers = () => {
     })
 
     const handleMakeAdmin = user => {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://assignment-12-server-flame-nu.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -29,35 +29,29 @@ const AllUsers = () => {
                     })
                 }
             })
-    }
+    };
 
-    const handleDelete = user => {
-        Swal.fire({
-            title: 'Are you sure?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${user._id}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCount > 0) {
-                            refetch();
-                            Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
-                                'success'
-                            )
-                        }
-                    })
-            }
+    // instructor make button
+    const handleMakeInstructor = user => {
+        fetch(`https://assignment-12-server-flame-nu.vercel.app/users/instructors/${user._id}`, {
+            method: 'PATCH'
         })
-    }
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is an Instructor Now!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    };
+
+    
     
 
     return (
@@ -91,7 +85,10 @@ const AllUsers = () => {
                                     }
                                 </td>
                                 <td>
-                                    <button onClick={() => handleDelete(user)} className="btn btn-ghost bg-red-600 text-white"><FaTrashAlt></FaTrashAlt></button>
+                                    {
+                                        user.role === 'instructor' ? 'instructor' :
+                                        <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost text-white">Instructor</button>
+                                    }
                                 </td>
                             </tr>)
                         }

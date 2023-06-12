@@ -16,7 +16,7 @@ const PopularCard = ({ arts }) => {
         console.log(arts);
         if(user && user.email){
             const bookingSeats = {bookingsId: _id, name, instructor, image, availableSeats, price, email: user.email}
-            fetch('http://localhost:5000/seats', {
+            fetch('https://assignment-12-server-flame-nu.vercel.app/seats', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
