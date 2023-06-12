@@ -16,6 +16,7 @@ import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import AdminRoute from "./AdminRoute";
 import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
 import Payment from "../pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 
 
 
@@ -56,6 +57,11 @@ export const router = createBrowserRouter([
             path: 'payment',
             element: <Payment></Payment>
           },
+          {
+            path: 'history',
+            element: <PaymentHistory></PaymentHistory>
+          },
+          
           // admin routes
           {
             path: 'allusers',

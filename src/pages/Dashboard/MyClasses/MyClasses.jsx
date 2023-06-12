@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import useSeats from '../../../hooks/useSeats';
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
@@ -43,7 +42,7 @@ const MyClasses = () => {
             <Helmet>
                 <title>Martial Arts | My Selected Class</title>
             </Helmet>
-            <SectionTitle heading="My Selected Class"></SectionTitle>
+            <h3 className='text-3xl font-bold uppercase text-center py-4'>My Selected Classes</h3>
             <div className='uppercase font-semibold h-[60px] flex justify-evenly items-center'>
                 <h3 className='text-3xl'>Total Class: {seat.length}</h3>
                 <h3 className='text-3xl'>Total Payment: ${total}</h3>

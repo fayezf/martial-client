@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import useClass from '../../../hooks/useClass';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
@@ -58,7 +57,7 @@ const ManageClasses = () => {
             <Helmet>
                 <title>Martial Arts | Manage Classes</title>
             </Helmet>
-            <SectionTitle heading="Manage Classes"></SectionTitle>
+            <h3 className='text-3xl font-bold uppercase text-center py-4'>Manage Classes</h3>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

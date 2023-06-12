@@ -1,5 +1,4 @@
 import React from 'react';
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import InstructorCard from './InstructorCard';
 import useInstructor from '../../../hooks/useInstructor';
 
@@ -9,10 +8,8 @@ const PopularInstructor = () => {
 
     return (
         <div>
-            <SectionTitle
-            heading="Popular Martial Instructors"
-            ></SectionTitle>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-2 ml-8'>
+            <h3 className='text-3xl font-bold uppercase text-center py-4'>Popular Martial Instructors</h3>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-12'>
                 {
                     popular?.map(teacher => <InstructorCard
                     key={teacher._id}

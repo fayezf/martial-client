@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import { FaTrashAlt, FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
@@ -66,7 +65,7 @@ const AllUsers = () => {
             <Helmet>
                 <title>Martial Arts | All Users</title>
             </Helmet>
-            <SectionTitle heading="Manage All Users"></SectionTitle>
+            <h3 className='text-3xl font-bold uppercase text-center py-4'>All Users</h3>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     {/* head */}

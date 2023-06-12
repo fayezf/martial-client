@@ -1,5 +1,4 @@
 import React from 'react';
-import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import { useForm } from 'react-hook-form';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
@@ -48,7 +47,7 @@ const AddClass = () => {
             <Helmet>
                 <title>Martial Arts | Add Classes</title>
             </Helmet>
-            <SectionTitle heading="Add A Class"></SectionTitle>
+            <h3 className='text-3xl font-bold uppercase text-center py-4'>Add A Class</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="md:flex gap-x-3 mb-8">
                     <div className="form-control md:w-1/2">
