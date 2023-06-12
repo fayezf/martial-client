@@ -33,7 +33,7 @@ const AllUsers = () => {
 
     // instructor make button
     const handleMakeInstructor = user => {
-        fetch(`https://assignment-12-server-flame-nu.vercel.app/users/instructors/${user._id}`, {
+        fetch(`https://assignment-12-server-flame-nu.vercel.app/users/teachers/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
