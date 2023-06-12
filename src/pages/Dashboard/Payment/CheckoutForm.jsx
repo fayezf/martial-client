@@ -64,7 +64,6 @@ const CheckoutForm = ({ seat, price }) => {
             console.log(confirmError)
         }
 
-        console.log(paymentIntent)
         setProcessing(false)
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
