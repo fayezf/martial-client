@@ -70,7 +70,7 @@ export const router = createBrowserRouter([
           },
           {
             path: 'addclass',
-            element: <AdminRoute><AddClass></AddClass></AdminRoute>
+            element: <AddClass></AddClass>
           },
           {
             path: 'myclass',
