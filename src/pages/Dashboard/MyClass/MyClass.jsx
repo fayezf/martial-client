@@ -30,8 +30,7 @@ const MyClass = () => {
                             <th>Image</th>
                             <th>Email</th>
                             <th>Price</th>
-                            <th>Approved</th>
-                            <th>Denied</th>
+                            <th>Status</th>
                             <th>Feedback</th>
                         </tr>
                     </thead>
@@ -41,19 +40,15 @@ const MyClass = () => {
                                 <td>{index + 1}</td>
                                 <td>{myClass.image}</td>
                                 <td>{myClass.email}</td>
-                                <td>{myClass.price}</td>
+                                <td>${myClass.price}</td>
                                 <td>
-                                    <button className="btn btn-primary btn-ghost">Approved</button>
-                                </td>
-                                <td>
-                                    <button className="btn btn-ghost">Denied</button>
+                                    <button className="btn btn-primary">Denied</button>
                                 </td>
                                 <td>
                                     <button className="btn btn-success btn-ghost">Feedback</button>
                                 </td>
                             </tr>)
                         }
-
                     </tbody>
                 </table>
             </div>
