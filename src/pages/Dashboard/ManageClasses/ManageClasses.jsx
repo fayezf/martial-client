@@ -56,11 +56,11 @@ const ManageClasses = () => {
     }
 
     return (
-        <div className='w-full'>
+        <div className='md:w-full'>
             <Helmet>
                 <title>Martial Arts | Manage Classes</title>
             </Helmet>
-            <h3 className='text-3xl font-bold uppercase text-center py-4'>Manage Classes</h3>
+            <h3 className='text-3xl font-roboto uppercase text-center py-4'>Manage Classes</h3>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
@@ -100,7 +100,7 @@ const ManageClasses = () => {
                                 <td>${item.price}</td>
                                 <td>
                                     {item === 'updated' ? 'updated' :
-                                        <button onClick={() => handleUpdate(item)} className="btn btn-ghost bg-primary text-white"><FaEdit /></button>
+                                        <button onClick={() => handleUpdate(item)} className="btn btn-ghost bg-teal-400 text-white"><FaEdit /></button>
                                     }
 
                                 </td>

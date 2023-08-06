@@ -7,15 +7,15 @@ import useSeats from '../../../hooks/useSeats';
 
 const PopularCard = ({ arts }) => {
     const { _id, name, instructor, image, availableSeats, price } = arts;
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [, refetch] = useSeats();
     const navigate = useNavigate();
     const location = useLocation()
 
     const handleSelect = arts => {
         console.log(arts);
-        if(user && user.email){
-            const bookingSeats = {bookingsId: _id, name, instructor, image, availableSeats, price, email: user.email}
+        if (user && user.email) {
+            const bookingSeats = { bookingsId: _id, name, instructor, image, availableSeats, price, email: user.email }
             fetch('https://assignment-12-server-flame-nu.vercel.app/seats', {
                 method: 'POST',
                 headers: {
@@ -23,21 +23,21 @@ const PopularCard = ({ arts }) => {
                 },
                 body: JSON.stringify(bookingSeats)
             })
-            .then(res => res.json())
-            .then(data => {
-                if(data.insertedId){
-                    refetch();
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Your work has been saved',
-                        showConfirmButton: false,
-                        timer: 1500
-                      })
-                }
-            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        refetch();
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Your work has been saved',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
+                })
         }
-        else{
+        else {
             Swal.fire({
                 title: 'Please login to booking the seats',
                 icon: 'warning',
@@ -45,17 +45,17 @@ const PopularCard = ({ arts }) => {
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Login now!'
-              }).then((result) => {
+            }).then((result) => {
                 if (result.isConfirmed) {
-                  navigate('/login', {state: {from: location}})
+                    navigate('/login', { state: { from: location } })
                 }
-              })
+            })
         }
     }
 
     return (
         <Slide>
-            <div className="card w-96 my-2 mb-8 bg-base-100 shadow-xl">
+            <div className="card w-72 my-2 mb-8 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img src={image} alt="" className="rounded-xl" />
                 </figure>
@@ -63,7 +63,7 @@ const PopularCard = ({ arts }) => {
                     <h2 className="card-title">{name}
                         <div className="badge badge-secondary">Popular</div>
                     </h2>
-                    <h2 className="card-title">Instructor: {instructor}</h2>
+                    <h2 className="card-title">{instructor}</h2>
                     <p>Available seats: {availableSeats}</p>
                     <p>Price: <span className='text-yellow-600'>${price}</span></p>
                     <div className="card-actions">

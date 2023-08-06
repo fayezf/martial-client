@@ -5,7 +5,7 @@ import logo from '../../../assets/logo.png';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-base-200 text-base-content">
+            <footer className="footer p-10 bg-teal-200 text-base-content">
                 <div>
                     <img style={{ width: '90px' }} src={logo} alt="" />
                     <p className='text-sm'><span className='font-bold text-lg'>Tiger Claw</span><br />Martial Arts School</p>
@@ -19,8 +19,8 @@ const Footer = () => {
                 </div>
                 <div>
                     <span className="footer-title">Address</span>
-                    <a className="link link-hover">Nayergaon Bazar, Chandpur</a>
-                    <a className="link link-hover">01622 14 59 14</a>
+                    <a className="link link-hover"> New York, USA</a>
+                    <a className="link link-hover">+123 456 789</a>
                     <a className="link link-hover">Daily: 08:00-19:00</a>
                 </div>
                 <div>

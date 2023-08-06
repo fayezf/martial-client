@@ -45,11 +45,11 @@ const AddClass = () => {
     };
 
     return (
-        <div className='w-full px-10'>
+        <div className='md:w-full px-10'>
             <Helmet>
                 <title>Martial Arts | Add Classes</title>
             </Helmet>
-            <h3 className='text-3xl font-bold uppercase text-center py-4'>Add A Class</h3>
+            <h3 className='text-3xl font-roboto uppercase text-center py-4'>Add A Class</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="md:flex gap-x-3 mb-8">
                     <div className="form-control md:w-1/2">

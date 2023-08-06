@@ -5,7 +5,7 @@ const InstructorsAll = ({ teach }) => {
     const { _id, instructor, image, email } = teach;
     return (
         <Zoom>
-            <div className="card w-96 my-2 mb-8 bg-base-100 shadow-xl">
+            <div className="card w-72 my-2 mb-8 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img src={image} alt="" className="rounded-xl" />
                 </figure>

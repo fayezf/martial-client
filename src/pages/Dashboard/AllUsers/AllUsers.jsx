@@ -55,11 +55,11 @@ const AllUsers = () => {
     
 
     return (
-        <div className='w-full'>
+        <div className='md:w-full'>
             <Helmet>
                 <title>Martial Arts | All Users</title>
             </Helmet>
-            <h3 className='text-3xl font-bold uppercase text-center py-4'>All Users</h3>
+            <h3 className='text-3xl font-roboto uppercase text-center py-4'>All Users</h3>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     {/* head */}
@@ -81,13 +81,13 @@ const AllUsers = () => {
                                 <td>
                                     {
                                         user.role === 'admin' ? 'admin' :
-                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-orange-600 text-white"><FaUserShield /></button>
+                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-sm bg-teal-400 text-white"><FaUserShield /></button>
                                     }
                                 </td>
                                 <td>
                                     {
                                         user.role === 'instructor' ? 'instructor' :
-                                        <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost text-white">Instructor</button>
+                                        <button onClick={() => handleMakeInstructor(user)} className="btn btn-sm bg-orange-500 text-white">Instructor</button>
                                     }
                                 </td>
                             </tr>)

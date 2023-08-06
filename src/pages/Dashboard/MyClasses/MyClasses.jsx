@@ -38,14 +38,14 @@ const MyClasses = () => {
     }
 
     return (
-        <div className='w-full'>
+        <div className='md:w-full'>
             <Helmet>
                 <title>Martial Arts | My Selected Class</title>
             </Helmet>
-            <h3 className='text-3xl font-bold uppercase text-center py-4'>My Selected Classes</h3>
+            <h3 className='text-3xl font-roboto uppercase text-center py-4'>My Selected Classes</h3>
             <div className='uppercase font-semibold h-[60px] flex justify-evenly items-center'>
-                <h3 className='text-3xl'>Total Class: {seat.length}</h3>
-                <h3 className='text-3xl'>Total Payment: ${total}</h3>
+                <h3 className='text-3xl font-roboto'>Total Class: {seat.length}</h3>
+                <h3 className='text-3xl font-roboto'>Total Payment: ${total}</h3>
             </div>
             <div className="overflow-x-auto">
                 <table className="table">
@@ -83,7 +83,7 @@ const MyClasses = () => {
                                 <td>${item.price}</td>
                                 <td>
                                     <Link to="/dashboard/payment">
-                                        <button className="btn btn-ghost bg-primary text-white">PAY</button>
+                                        <button className="btn btn-ghost bg-teal-400 text-white">PAY</button>
                                     </Link>
                                 </td>
                                 <td>

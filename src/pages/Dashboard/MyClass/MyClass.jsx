@@ -16,11 +16,11 @@ const MyClass = () => {
     }, [])
 
     return (
-        <div className='w-full px-10 align-top'>
+        <div className='md:w-full px-10 align-top'>
             <Helmet>
                 <title>Martial Arts | My Class</title>
             </Helmet>
-            <h3 className='text-3xl font-bold uppercase text-center py-4'>My Class</h3>
+            <h3 className='text-3xl font-roboto uppercase text-center py-4'>My Class</h3>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     {/* head */}

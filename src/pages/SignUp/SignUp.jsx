@@ -53,12 +53,12 @@ const SignUp = () => {
             <Helmet>
                 <title>Martial Arts | Sign Up</title>
             </Helmet>
-            <div className="hero min-h-screen my-16 bg-base-200">
-                <div className="hero-content md:flex gap-12">
+            <div className="hero min-h-screen flex items-center justify-center bg-base-200">
+                <div className="hero-content gap-12">
                     <div className='w-1/2'>
-                        <img style={{ height: '700px' }} className='rounded-lg' src={signUp} alt="" />
+                        <img style={{ height: '600px' }} className='rounded-lg' src={signUp} alt="" />
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card shadow-2xl h-1/2 bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">

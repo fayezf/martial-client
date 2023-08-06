@@ -6,7 +6,7 @@ const Contact = () => {
             <section className="text-gray-700 body-font relative">
                 <div className=" px-5 py-24 mx-auto">
                     <div className="flex flex-col text-center w-full mb-12">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+                        <h1 className="sm:text-3xl text-2xl font-roboto title-font mb-4 text-gray-900">
                             Contact Us
                         </h1>
                         <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
@@ -61,12 +61,12 @@ const Contact = () => {
                                 </div>
                             </div>
                             <div className="p-2 w-full">
-                                <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                                <button className="flex mx-auto text-white bg-accent border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                                     Submit
                                 </button>
                             </div>
                             <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                                <a className="text-indigo-500">bill@gates.com</a>
+                                <a className="">bill@gates.com</a>
                                 <p className="leading-normal my-5">
                                     New York
                                     <br />

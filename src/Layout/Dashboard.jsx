@@ -18,7 +18,7 @@ const Dashboard = () => {
                 <Outlet></Outlet>
 
             </div>
-            <div className="drawer-side bg-yellow-700">
+            <div className="drawer-side bg-slate-100">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80">
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
