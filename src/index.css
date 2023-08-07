@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Manrope&family=Montserrat&family=Roboto&family=Roboto+Condensed&display=swap');
 
+* {
+  font-family: 'EB Garamond', serif;
+  font-family: 'Manrope', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .drawer-side a.active {
-    color: teal;
-  }
+  color: teal;
+}
+
 .drawer-side a {
-    background-color: transparent;
-  }
+  background-color: transparent;
+}
