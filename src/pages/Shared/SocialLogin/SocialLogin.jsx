@@ -32,11 +32,8 @@ const SocialLogin = () => {
     return (
         <div className='p-8'>
             <div className="divider"></div>
-            <div className='flex justify-center items-center border border-gray-500 rounded py-2 gap-2'>
+            <div className='text-center'>
                 <p onClick={handleGoogle} className="btn btn-circle btn-outline text-cyan-700"><FaGoogle></FaGoogle></p>
-                <div>
-                    <span className='text-green-900 font-bold'>Google</span>
-                </div>
             </div>
         </div>
     );

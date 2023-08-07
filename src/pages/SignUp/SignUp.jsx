@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-import signUp from '../../assets/banner/signUp.jpg';
 import { AuthContext } from '../../providers/AuthProvider';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 import Swal from 'sweetalert2';
@@ -53,11 +52,8 @@ const SignUp = () => {
             <Helmet>
                 <title>Martial Arts | Sign Up</title>
             </Helmet>
-            <div className="hero min-h-screen flex items-center justify-center bg-base-200">
+            <div className="hero bg-base-200">
                 <div className="hero-content gap-12">
-                    <div className='w-1/2'>
-                        <img style={{ height: '600px' }} className='rounded-lg' src={signUp} alt="" />
-                    </div>
                     <div className="card shadow-2xl h-1/2 bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
@@ -103,7 +99,7 @@ const SignUp = () => {
                                 <input className="btn btn-primary w-full" type="submit" value="Sign Up" />
                             </div>
                         </form>
-                        <p className='text-center'><small>Already have an account <Link to="/login">Login</Link></small></p>
+                        <p className='text-center'><small>Already have an account <Link to="/login" className='text-teal-400'>Login</Link></small></p>
                         <SocialLogin></SocialLogin>
                     </div>
                 </div>
