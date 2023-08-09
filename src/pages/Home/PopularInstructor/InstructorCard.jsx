@@ -5,7 +5,7 @@ const InstructorCard = ({ teacher }) => {
     const { _id, instructor, image, email } = teacher;
     return (
         <Flip>
-            <div className="card w-72 my-2 mb-8 bg-base-100 shadow-xl">
+            <div className="card w-72 h-full border-2 hover:border-teal-300 my-2 mb-8 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img src={image} alt="" className="rounded-xl" />
                 </figure>

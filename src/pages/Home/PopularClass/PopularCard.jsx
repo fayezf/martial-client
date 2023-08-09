@@ -55,7 +55,7 @@ const PopularCard = ({ arts }) => {
 
     return (
         <Slide>
-            <div className="card w-72 my-2 mb-8 bg-base-100 shadow-xl">
+            <div className="card w-72 border-2 hover:border-teal-300 my-2 mb-8 bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img src={image} alt="" className="rounded-xl" />
                 </figure>
