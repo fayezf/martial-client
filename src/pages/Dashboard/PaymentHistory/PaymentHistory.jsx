@@ -16,7 +16,7 @@ const PaymentHistory = () => {
     }, [])
 
     return (
-        <div className='md:w-full px-10 align-top'>
+        <div className='md:w-full px-10'>
             <Helmet>
                 <title>Martial Arts | Payment History</title>
             </Helmet>

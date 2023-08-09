@@ -57,7 +57,7 @@ const Login = () => {
                                 <input type="password" name='password' placeholder="password" className="input input-bordered w-full" />
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary w-full" type="submit" value="Login" />
+                                <input className="btn bg-teal-400 text-white w-full" type="submit" value="Login" />
                             </div>
                         </form>
                         <p className='text-center'><small>New Here? <Link to="/signup" className='text-teal-400'>Create an account</Link></small></p>
